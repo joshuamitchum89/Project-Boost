@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     int currentSceneIndex;
+    PlayerController playerController;
 
     private void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        playerController = GetComponent<PlayerController>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -18,15 +20,28 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Tagged as Friendly");
                 break;
             case "Finish":
-                LoadNextLevel();
-                break;
-            case "Fuel":
-                Debug.Log("Tagged as Fuel");
+                StartSuccessSequence();
                 break;
             default:
-                ReloadLevel();
+                StartCrashSequence();
                 break;
         }
+    }
+
+    void StartSuccessSequence()
+    {
+        // TODO: Add SFX upon success
+        // TODO: Add particle effect upon success
+        playerController.enabled = false;
+        Invoke("LoadNextLevel", 2f);
+    }
+
+    void StartCrashSequence()
+    {
+        // TODO: Add SFX upon crash
+        // TODO: Add particle effect upon crash
+        playerController.enabled = false;
+        Invoke("ReloadLevel", 2f);
     }
 
     void ReloadLevel()
