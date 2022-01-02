@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    int currentSceneIndex;
+
+    private void Start()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
     void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -11,14 +18,29 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Tagged as Friendly");
                 break;
             case "Finish":
-                Debug.Log("Tagged as Finish");
+                LoadNextLevel();
                 break;
             case "Fuel":
                 Debug.Log("Tagged as Fuel");
                 break;
             default:
-                SceneManager.LoadScene(0);
+                ReloadLevel();
                 break;
         }
+    }
+
+    void ReloadLevel()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void LoadNextLevel()
+    {
+        int nextSceneIndex = currentSceneIndex + 1;
+        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
