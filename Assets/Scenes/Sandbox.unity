@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
-    - target: {fileID: 7870029523274808938, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
 --- !u!1 &705507993
@@ -424,18 +420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4700762200316553145, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f207298c508b8924daf12351c668b319, type: 3}
-    - target: {fileID: 4700762200316553145, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
-      propertyPath: missionSuccess
-      value: 
-      objectReference: {fileID: 8300000, guid: 6654bc1fa41adef4bad964c9902812e6, type: 3}
-    - target: {fileID: 6029593831735464042, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
-      propertyPath: engineThrust
-      value: 
-      objectReference: {fileID: 8300000, guid: 7b9e64e26a36d9b40a9a1f5ce8f6df9a, type: 3}
     - target: {fileID: 6029593831735464043, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
       propertyPath: m_Name
       value: Rocket

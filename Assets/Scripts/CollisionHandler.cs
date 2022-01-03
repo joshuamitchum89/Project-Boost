@@ -10,6 +10,8 @@ public class CollisionHandler : MonoBehaviour
     PlayerController playerController;
     AudioSource audioSource;
 
+    bool isTransitioning = false;
+
     private void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -19,22 +21,27 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        switch (other.gameObject.tag)
+        if (!isTransitioning)
         {
-            case "Friendly":
-                Debug.Log("Tagged as Friendly");
-                break;
-            case "Finish":
-                StartSuccessSequence();
-                break;
-            default:
-                StartCrashSequence();
-                break;
+            switch (other.gameObject.tag)
+            {
+                case "Friendly":
+                    Debug.Log("Tagged as Friendly");
+                    break;
+                case "Finish":
+                    StartSuccessSequence();
+                    break;
+                default:
+                    StartCrashSequence();
+                    break;
+            }
         }
     }
 
     void StartSuccessSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(missionSuccess);
         // TODO: Add particle effect upon success
         playerController.enabled = false;
@@ -43,6 +50,8 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(deathClip);
         // TODO: Add particle effect upon crash
         playerController.enabled = false;
