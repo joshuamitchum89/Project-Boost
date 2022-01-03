@@ -3,13 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] AudioClip deathClip;
+    [SerializeField] AudioClip missionSuccess;
+
     int currentSceneIndex;
     PlayerController playerController;
+    AudioSource audioSource;
 
     private void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         playerController = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -30,7 +35,7 @@ public class CollisionHandler : MonoBehaviour
 
     void StartSuccessSequence()
     {
-        // TODO: Add SFX upon success
+        audioSource.PlayOneShot(missionSuccess);
         // TODO: Add particle effect upon success
         playerController.enabled = false;
         Invoke("LoadNextLevel", 2f);
@@ -38,7 +43,7 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence()
     {
-        // TODO: Add SFX upon crash
+        audioSource.PlayOneShot(deathClip);
         // TODO: Add particle effect upon crash
         playerController.enabled = false;
         Invoke("ReloadLevel", 2f);

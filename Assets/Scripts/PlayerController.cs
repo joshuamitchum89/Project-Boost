@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {   
     [SerializeField] float thrustPower = 100f;
     [SerializeField] float rotationSpeed = 100f;
+    [SerializeField] AudioClip engineThrust;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * thrustPower * Time.deltaTime);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(engineThrust);
             }
         }
         else
