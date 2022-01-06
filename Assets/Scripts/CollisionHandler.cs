@@ -6,6 +6,10 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip deathClip;
     [SerializeField] AudioClip missionSuccess;
 
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem explodeParticles;
+    [SerializeField] ParticleSystem portalParticles;
+
     int currentSceneIndex;
     PlayerController playerController;
     AudioSource audioSource;

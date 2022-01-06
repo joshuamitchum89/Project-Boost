@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float thrustPower = 100f;
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] AudioClip engineThrust;
+    [SerializeField] ParticleSystem thrustParticles;
 
     Rigidbody rb;
     AudioSource audioSource;

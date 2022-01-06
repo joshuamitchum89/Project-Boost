@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
+--- !u!198 &333594153 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 812316413497064609, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
+  m_PrefabInstance: {fileID: 333594152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -420,6 +425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4700762200316553145, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
+      propertyPath: portalParticles
+      value: 
+      objectReference: {fileID: 333594153}
     - target: {fileID: 6029593831735464043, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -483,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7938438235670935450, guid: 068128f9674269042918208b47d53b15, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7938438235670935450, guid: 068128f9674269042918208b47d53b15, type: 3}
       propertyPath: m_LocalPosition.x
