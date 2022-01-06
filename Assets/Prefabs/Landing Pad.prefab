@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8414507455048087562}
   - component: {fileID: 4594752803651356135}
   - component: {fileID: 5082657704879804759}
-  - component: {fileID: 5951302937494590562}
   m_Layer: 0
   m_Name: Landing Pad
   m_TagString: Finish
@@ -98,23 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5951302937494590562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7870029523274808938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459728fa3e74f904284d40b6a064447e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathClip: {fileID: 0}
-  missionSuccess: {fileID: 0}
-  successParticles: {fileID: 4485649446338287054}
-  explodeParticles: {fileID: 812316413497064609}
-  portalParticles: {fileID: 0}
 --- !u!1001 &2714106642440102937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,9 +104,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7031259521438325341}
     m_Modifications:
+    - target: {fileID: 731877347674429543, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1918613801306882934, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567063818959603707, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866554968651786526, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382094356409063608, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719496173195627939, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8341584249447441198, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
       propertyPath: m_RootOrder
@@ -170,16 +172,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8648391785622868717, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
 --- !u!4 &6226564247063971639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8341584249447441198, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
-  m_PrefabInstance: {fileID: 2714106642440102937}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &812316413497064609 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3382094356409063608, guid: 044e85eb1b450db4180fb5d8760e1e51, type: 3}
   m_PrefabInstance: {fileID: 2714106642440102937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9159174911209541775
@@ -189,6 +190,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7031259521438325341}
     m_Modifications:
+    - target: {fileID: 638418948485232827, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860617234655600632, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709594686178411841, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032863558989805899, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7049071672051453947, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -249,15 +266,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Success
       objectReference: {fileID: 0}
+    - target: {fileID: 8830667858411540802, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
 --- !u!4 &2218225519520243572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7049071672051453947, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
-  m_PrefabInstance: {fileID: 9159174911209541775}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4485649446338287054 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4709594686178411841, guid: 33203f07bf40c764baf30844a93bac52, type: 3}
   m_PrefabInstance: {fileID: 9159174911209541775}
   m_PrefabAsset: {fileID: 0}
