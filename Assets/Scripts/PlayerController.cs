@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {   
     [SerializeField] float thrustPower = 100f;
     [SerializeField] float rotationSpeed = 100f;
+    [SerializeField] AudioClip engineThrust;
+
+    [SerializeField] public ParticleSystem thrustParticles;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -33,18 +36,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * thrustPower * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
+            StartThrusting();
         }
         else
         {
-            audioSource.Stop();
+            StopThrusting();
         }
     }
-
     void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.D))
@@ -54,6 +52,25 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             ApplyRotation(-rotationSpeed);
+        }
+    }
+
+    void StopThrusting()
+    {
+        audioSource.Stop();
+        thrustParticles.Stop();
+    }
+
+    void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * thrustPower * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(engineThrust);
+        }
+        if (!thrustParticles.isPlaying)
+        {
+            thrustParticles.Play();
         }
     }
 

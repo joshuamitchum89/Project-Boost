@@ -178,12 +178,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
-    - target: {fileID: 7870029523274808938, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
+--- !u!198 &333594153 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 812316413497064609, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
+  m_PrefabInstance: {fileID: 333594152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +361,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1368438597 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4485649446338287054, guid: 46efa9d88b26090418d1c097413c222b, type: 3}
+  m_PrefabInstance: {fileID: 333594152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2126863702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +430,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4700762200316553145, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
+      propertyPath: portalParticles
+      value: 
+      objectReference: {fileID: 333594153}
+    - target: {fileID: 4700762200316553145, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
+      propertyPath: successParticles
+      value: 
+      objectReference: {fileID: 1368438597}
     - target: {fileID: 6029593831735464043, guid: 7e6c4a6acbddd8f43ae919fcece25193, type: 3}
       propertyPath: m_Name
       value: Rocket
