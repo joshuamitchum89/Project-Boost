@@ -5,10 +5,13 @@ public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] AudioClip deathClip;
     [SerializeField] AudioClip missionSuccess;
-
-    [SerializeField] ParticleSystem successParticles;
+    
     [SerializeField] ParticleSystem explodeParticles;
-    [SerializeField] ParticleSystem portalParticles;
+    
+    GameObject landingPad;
+
+    ParticleSystem successParticles;
+    ParticleSystem portalParticles;
 
     int currentSceneIndex;
     PlayerController playerController;
@@ -18,9 +21,17 @@ public class CollisionHandler : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    void Init()
+    {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         playerController = GetComponent<PlayerController>();
         audioSource = GetComponent<AudioSource>();
+        landingPad = GameObject.Find("Landing Pad");
+        successParticles = landingPad.transform.GetChild(1).GetComponentInChildren<ParticleSystem>();
+        portalParticles = landingPad.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -47,7 +58,8 @@ public class CollisionHandler : MonoBehaviour
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(missionSuccess);
-        // TODO: Add particle effect upon success
+        successParticles.Play();
+        playerController.thrustParticles.Stop();
         playerController.enabled = false;
         Invoke("LoadNextLevel", 2f);
     }
@@ -57,7 +69,8 @@ public class CollisionHandler : MonoBehaviour
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(deathClip);
-        // TODO: Add particle effect upon crash
+        explodeParticles.Play();
+        playerController.thrustParticles.Stop();
         playerController.enabled = false;
         Invoke("ReloadLevel", 2f);
     }
